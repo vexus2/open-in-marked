@@ -1,17 +1,21 @@
 <idea-plugin version="2">
     <id>com.vexus2.intellij.marked</id>
     <name>Open in Marked</name>
-    <version>0.1</version>
+    <version>0.2</version>
     <vendor email="hikaru.tooyama@gmail.com" url="http://twitter.com/vexus2">Vexus2</vendor>
 
     <description><![CDATA[
       Open markdown file into Markdown Viewer Marked.<br>
+      Default keymap is "Ctrl+Alt+M".<br>
       You need to install 'Marked'.<br>
       Visit this site.<br>
       http://markedapp.com/
       ]]></description>
 
     <change-notes><![CDATA[
+      version 0.2<br>
+      Fixed bug.<br>
+
       version 0.1<br>
       Initial release.<br>
       ]]>
@@ -31,13 +35,17 @@
     </project-components>
 
     <actions>
-        <!-- Add your actions here -->
+
         <action id="openInMarked"
-                class="com.vexus2.intellij.marked.Action"
-                text="Marked"
-                description="Open markdown file into Marked">
-            <add-to-group group-id="ToolsMenu" anchor="last"/>
-            <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt M"/>
+                class="com.vexus2.intellij.marked.Marked"
+                text="Open Markdown in Marked"
+                description="Open Markdown file into Marked">
+            <add-to-group
+                    group-id="ToolsMenu"
+                    anchor="last"/>
+            <keyboard-shortcut
+                    keymap="$default"
+                    first-keystroke="ctrl alt M"/>
         </action>
     </actions>
 
